@@ -1,0 +1,42 @@
+<div class="container">
+    @for( node of nodes; track node.id ){
+    <div class="folder">
+        @if(node.children.length> 0){
+
+        <div (click)="onShowFolderContent(node.id)">
+            @if(!showFolderContentsState[node.id]){
+            <span class="open-close">+</span>
+            }@else{
+            <span class="open-close">-</span>
+            }
+        </div>
+        <span>{{node.name}}</span>
+
+
+
+
+        }
+        @else {
+        <div>{{node.name}}</div>
+        }
+        @if(node.isFolder){
+        <div (click)="onAddFolder(node.id)">
+            <img class='add-folder' src="https://cdn-icons-png.flaticon.com/512/4732/4732459.png" alt="add-folder" />
+        </div>
+        }
+        <div  (click)="onDeleteFolder(node.id)">
+            <img class='delete-folder'
+                src="https://icons.veryicon.com/png/o/education-technology/learning-to-bully-the-king/delete-351.png"
+                alt="add-folder" />
+        </div>
+    </div>
+
+    @if(node.children.length>0 && !!showFolderContentsState[node.id]){
+    <app-folder-structure [nodes]="node.children" [showFolderContentsState]="showFolderContentsState"
+        (showFolderContents)="onShowFolderContent($event)" (addFolder)="onAddFolder($event)"
+        (deleteFolder)="onDeleteFolder($event)"></app-folder-structure>
+    }
+    }
+
+
+</div>
