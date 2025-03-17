@@ -1,0 +1,8 @@
+<ul>
+    @for (item of users; track item.id) {
+    <li><app-user [user]="item"></app-user></li>
+    } @empty {
+    <li>There are no items.</li>
+    }
+    <div id="virtual-observer-block" appIntersectionobserver (isIntersecting)="handleIsintersecting($event)">Intersection observer block</div>
+</ul>
