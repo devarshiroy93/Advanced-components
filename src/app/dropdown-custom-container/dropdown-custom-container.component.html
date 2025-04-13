@@ -1,0 +1,26 @@
+<div style="display: grid;grid-template-columns: 30% 30%;">
+    <div>
+        <app-dropdown>
+            <app-dropdownitem>
+                Item 1
+            </app-dropdownitem>
+            <app-dropdownitem>
+                Item 2
+            </app-dropdownitem>
+            <app-dropdownitem>
+               <app-user [user]="user"></app-user>
+            </app-dropdownitem>
+        </app-dropdown>
+    </div>
+    <div>
+        Second dropdown
+    </div>
+</div>
+
+<!-- api should be like this -->
+
+<!-- <app-dropdown-custom>
+            <app-dropdown-item>
+
+            </app-dropdown-item>
+        </app-dropdown-custom> -->

@@ -1,0 +1,18 @@
+<div class="tabs-container">
+    <div class="tab-headers">
+      <button 
+        *ngFor="let tab of tabs"
+        (click)="selectTab(tab)"
+        [class.active]="tab === activeTab"
+      >
+        {{ tab.title }}
+      </button>
+    </div>
+  
+    <div class="tab-content">
+      <ng-container 
+        *ngIf="activeTab"
+        [ngTemplateOutlet]="activeTab.content"
+      ></ng-container>
+    </div>
+  </div>

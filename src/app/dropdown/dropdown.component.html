@@ -1,0 +1,15 @@
+<div style="display: grid ; grid-template-columns: 60% 35%; column-gap: 1rem;">
+    <div style="border:1px solid #ccc">
+        Please select 
+        <div #container></div>
+        
+    </div>
+    <button (click)="toggle()">{{!isOptionsShown ? 'Open' : 'Close'}}</button>
+</div>
+@if(isOptionsShown){
+    <div *ngFor="let item of items">
+        <ng-container [ngTemplateOutlet]="item.content" ></ng-container>
+    </div>
+    
+}
+

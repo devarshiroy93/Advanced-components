@@ -1,0 +1,14 @@
+<app-undoredo>
+    <form [formGroup]="form" style="padding:1rem;border:1px solid #ccc">
+        <h2>Undo redo demo</h2>
+        <div>
+            <label for="add1">Address Line 1</label>
+            <input type="text" id="add1" (change)="handleAddChange($event)" />
+        </div>
+        <div>
+            <label for="add2">Address Line 2</label>
+            <input type="text" id="add2" (change)="handleAddChange($event)" />
+        </div>
+
+    </form>
+</app-undoredo>
