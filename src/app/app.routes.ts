@@ -11,5 +11,6 @@ export const routes: Routes = [
     { path: 'infinite-scroll', component: InfiniteScrollContainerComponent },
     { path: 'undo-redo', component: UndoredodemoComponent },
     { path: 'tabs', component: TabsContainerComponent },
-    {path : 'dropdown' , component : DropdownCustomContainerComponent}
+    { path: 'dropdown', component: DropdownCustomContainerComponent },
+    { path: 'nested-checkbox', loadChildren: () => import('./nested-checkbox/nested-checkbox.module').then(m => m.NestedCheckboxModule) }
 ];

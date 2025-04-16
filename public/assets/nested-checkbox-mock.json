@@ -1,0 +1,65 @@
+{
+    "data": [
+      {
+        "label": "Top most A",
+        "checked": false,
+        "children": [
+          {
+            "label": "Level 1 - Child A1",
+            "checked": false,
+            "children": [
+              {
+                "label": "Level 2 - Child A1a",
+                "checked": false,
+                "children": [
+                  {
+                    "label": "Level 3 - Child A1a1",
+                    "checked": false,
+                    "children": []
+                  },
+                  {
+                    "label": "Level 3 - Child A1a2",
+                    "checked": true,
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "label": "Level 2 - Child A1b",
+                "checked": false,
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "Level 1 - Child A2",
+            "checked": true,
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Top most B",
+        "checked": true,
+        "children": [
+          {
+            "label": "Level 1 - Child B1",
+            "checked": false,
+            "children": [
+              {
+                "label": "Level 2 - Child B1a",
+                "checked": true,
+                "children": []
+              }
+            ]
+          },
+          {
+            "label": "Level 1 - Child B2",
+            "checked": false,
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -4,7 +4,6 @@ import {
   QueryList,
   ViewContainerRef,
   ViewChild,
-  EmbeddedViewRef,
   AfterViewInit,
 } from '@angular/core';
 import { DropdownitemComponent } from '../dropdownitem/dropdownitem.component';
@@ -32,7 +31,7 @@ import { DropdownitemComponent } from '../dropdownitem/dropdownitem.component';
   styles: [`
     .dropdown-container {
       position: relative;
-      width: 200px;
+      width: 100%;
       font-family: Arial, sans-serif;
     }
 
