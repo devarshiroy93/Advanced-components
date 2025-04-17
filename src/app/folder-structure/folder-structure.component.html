@@ -32,8 +32,11 @@
     </div>
 
     @if(node.children.length>0 && !!showFolderContentsState[node.id]){
-    <app-folder-structure [nodes]="node.children" [showFolderContentsState]="showFolderContentsState"
-        (showFolderContents)="onShowFolderContent($event)" (addFolder)="onAddFolder($event)"
+    <app-folder-structure 
+        [nodes]="node.children" 
+        [showFolderContentsState]="showFolderContentsState"
+        (showFolderContents)="onShowFolderContent($event)" 
+        (addFolder)="onAddFolder($event)"
         (deleteFolder)="onDeleteFolder($event)"></app-folder-structure>
     }
     }

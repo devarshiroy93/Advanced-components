@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 
 export type CheckboxNode = {
+  id: number,
   label: string;
   checked: boolean;
   children: CheckboxNode[];
@@ -33,5 +34,30 @@ export class NestedCheckboxContainerComponent implements OnInit {
       .subscribe((data) => {
         this.checkboxData = data;
       });
+  }
+
+  handleChange(value: number) {
+    console.log('VALUE--->', value);
+    this.checkboxData = this.markAsChecked(value, this.checkboxData);
+  }
+
+  markAsChecked(id: number, checkBoxData: CheckboxNode[]): CheckboxNode[] {
+    let modVal: CheckboxNode[] = [];
+    if (id) {
+      modVal = checkBoxData.map((data: CheckboxNode) => {
+        if (data.id === id) {
+          return {
+            ...data,
+            checked: true
+          }
+        } else {
+          return {
+            ...data,
+            children: this.markAsChecked(id, data.children)
+          }
+        }
+      })
+    }
+    return modVal
   }
 }

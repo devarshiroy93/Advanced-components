@@ -1,9 +1,11 @@
 <ng-container *ngFor="let node of nodes">
-    <div >
+    <div>
         <label>{{node.label}}</label>
-        <input type="checkbox" [checked]="node.checked" />
+        <input type="checkbox" [checked]="node.checked" (change)="handleCheck($event,node)" />
     </div>
     <div style="margin-left: 0.6rem;" *ngIf="node.children.length>0">
-        <app-nested-checkbox [nodes]="node.children"></app-nested-checkbox>
+        <app-nested-checkbox
+         (check)="handleChange($event)" 
+         [nodes]="node.children"></app-nested-checkbox>
     </div>
 </ng-container>
