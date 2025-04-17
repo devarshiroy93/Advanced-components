@@ -41,14 +41,22 @@ export class NestedCheckboxContainerComponent implements OnInit {
     this.checkboxData = this.markAsChecked(value, this.checkboxData);
   }
 
-  markAsChecked(id: number, checkBoxData: CheckboxNode[]): CheckboxNode[] {
+  markAsChecked(id: number, checkBoxData: CheckboxNode[], forceTrue: boolean = false): CheckboxNode[] {
     let modVal: CheckboxNode[] = [];
     if (id) {
       modVal = checkBoxData.map((data: CheckboxNode) => {
         if (data.id === id) {
           return {
             ...data,
-            checked: true
+            checked: true,
+            children: this.markAsChecked(id, data.children, true)
+          }
+        } else if (forceTrue) {
+
+          return {
+            ...data,
+            checked: true,
+            children: this.markAsChecked(id, data.children, forceTrue)
           }
         } else {
           return {
