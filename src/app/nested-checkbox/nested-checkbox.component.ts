@@ -14,13 +14,21 @@ export class NestedCheckboxComponent {
   @Output()
   check: EventEmitter<number> = new EventEmitter<number>();
 
-  handleCheck(event: Event , node : CheckboxNode) {
+  @Output()
+  uncheck: EventEmitter<number> = new EventEmitter<number>();
+
+  handleCheck(event: Event, node: CheckboxNode) {
     if ((event?.target as HTMLInputElement).checked) {
       console.log('HELLOOOO');
       this.check.emit(node.id);
+    }else{
+      this.uncheck.emit(node.id)
     }
   }
-  handleChange(id: number){
+  handleChange(id: number) {
     this.check.emit(id)
+  }
+  handleUnCheck(id: number){
+    this.uncheck.emit(id)
   }
 }

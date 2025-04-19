@@ -6,6 +6,7 @@
     <div style="margin-left: 0.6rem;" *ngIf="node.children.length>0">
         <app-nested-checkbox
          (check)="handleChange($event)" 
+         (uncheck)="handleUnCheck($event)"
          [nodes]="node.children"></app-nested-checkbox>
     </div>
 </ng-container>

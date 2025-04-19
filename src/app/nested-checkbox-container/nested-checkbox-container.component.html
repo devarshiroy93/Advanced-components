@@ -1,2 +1,4 @@
 
-<app-nested-checkbox [nodes]="checkboxData" (check)="handleChange($event)"></app-nested-checkbox>
+<app-nested-checkbox [nodes]="checkboxData"
+(uncheck)="handleUnCheck($event)" (check)="handleCheck($event)"
+></app-nested-checkbox>

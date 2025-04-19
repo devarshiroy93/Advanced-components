@@ -35,37 +35,46 @@ export class NestedCheckboxContainerComponent implements OnInit {
         this.checkboxData = data;
       });
   }
-
-  handleChange(value: number) {
+  handleUnCheck(value: number) {
     console.log('VALUE--->', value);
-    this.checkboxData = this.markAsChecked(value, this.checkboxData);
+    this.checkboxData = this.markAsChecked(value, this.checkboxData, false)
+  }
+  handleCheck(value: number) {
+    console.log('VALUE--->', value);
+    this.checkboxData = this.markAsChecked(value, this.checkboxData, true);
   }
 
-  markAsChecked(id: number, checkBoxData: CheckboxNode[], forceTrue: boolean = false): CheckboxNode[] {
+  markAsChecked(id: number,
+    checkBoxData: CheckboxNode[],
+    check: boolean = false,
+    forceTrue: boolean = false,
+  ): CheckboxNode[] {
     let modVal: CheckboxNode[] = [];
     if (id) {
       modVal = checkBoxData.map((data: CheckboxNode) => {
         if (data.id === id) {
           return {
             ...data,
-            checked: true,
-            children: this.markAsChecked(id, data.children, true)
+            checked: check,
+            children: this.markAsChecked(id, data.children, check , true)
           }
         } else if (forceTrue) {
 
           return {
             ...data,
-            checked: true,
-            children: this.markAsChecked(id, data.children, forceTrue)
+            checked: check,
+            children: this.markAsChecked(id, data.children,check, forceTrue)
           }
         } else {
           return {
             ...data,
-            children: this.markAsChecked(id, data.children)
+            children: this.markAsChecked(id, data.children,check)
           }
         }
       })
     }
     return modVal
   }
+
+
 }

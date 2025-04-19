@@ -24,7 +24,7 @@
                 {
                   "id": 5,
                   "label": "Level 3 - Child A1a2",
-                  "checked": true,
+                  "checked": false,
                   "children": []
                 }
               ]
@@ -40,7 +40,7 @@
         {
           "id": 7,
           "label": "Level 1 - Child A2",
-          "checked": true,
+          "checked": false,
           "children": []
         }
       ]
@@ -48,7 +48,7 @@
     {
       "id": 8,
       "label": "Top most B",
-      "checked": true,
+      "checked": false,
       "children": [
         {
           "id": 9,
@@ -58,7 +58,7 @@
             {
               "id": 10,
               "label": "Level 2 - Child B1a",
-              "checked": true,
+              "checked": false,
               "children": []
             }
           ]
